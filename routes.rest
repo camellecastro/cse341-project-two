@@ -22,7 +22,7 @@ GET http://localhost:8000/laptops
 
 ### GET REQUEST FROM LOCAL HOST THAT SHOWS ONE LAPTOP BY ID
 // GET ONE LAPTOP
-GET http://localhost:8000/contacts/66403e94a19a99e1e3e1c840
+GET http://localhost:8000/contacts/66403dd1a19a99e1e3e1c83d
 
 ### POST REQUEST FROM LOCAL HOST TO CREATE A NEW LAPTOP
 // POST NEW LAPTOP
@@ -34,6 +34,7 @@ Content-Type: application/json
     "brand": "Apple",
     "processor": "16-Core Neural Engine",
     "screenSize": "13.6",
+    "batteryLife": "18 hours",
     "installedRAM": "16 GB",
     "driveCapacity": "512 GB",
     "driveType": "SSD",

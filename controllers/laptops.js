@@ -116,7 +116,7 @@ const deleteLaptop = async (req, res) => {
     .getDb("Cluster1")
     .db("project2")
     .collection("laptops")
-    .deleteOne({ _id: phoneId });
+    .deleteOne({ _id: laptopId });
 
   if (response.deletedCount > 0) {
     res.status(204).send();
