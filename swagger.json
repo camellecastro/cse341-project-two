@@ -1,0 +1,374 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Laptop and Smartphone API",
+    "description": "Laptops and Smartphones API",
+    "version": "1.0.0"
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["TEST ROUTE"],
+        "description": "Hello World!",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/laptops/": {
+      "get": {
+        "tags": ["LAPTOPS"],
+        "description": "GET ALL LAPTOPS",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": ["LAPTOPS"],
+        "description": "ADD NEW LAPTOP",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "modelName": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "processor": {
+                  "example": "any"
+                },
+                "screenSize": {
+                  "example": "13 inches"
+                },
+                "batteryLife": {
+                  "example": "18 hours"
+                },
+                "installedRAM": {
+                  "example": "8 GB"
+                },
+                "driveCapacity": {
+                  "example": "1 TB"
+                },
+                "driveType": {
+                  "example": "SSD"
+                },
+                "price": {
+                  "example": "777"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/laptops/{id}": {
+      "get": {
+        "tags": ["LAPTOPS"],
+        "description": "GET A SINGLE LAPTOP BY ID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": ["LAPTOPS"],
+        "description": "UPDATE LAPTOP BY ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "modelName": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "processor": {
+                  "example": "any"
+                },
+                "screenSize": {
+                  "example": "any"
+                },
+                "batteryLife": {
+                  "example": "any"
+                },
+                "installedRAM": {
+                  "example": "any"
+                },
+                "driveCapacity": {
+                  "example": "any"
+                },
+                "driveType": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["LAPTOPS"],
+        "description": "DELETE A LAPTOP BY ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/phones/": {
+      "get": {
+        "tags": ["PHONES"],
+        "description": "GET ALL PHONES",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": ["PHONES"],
+        "description": "ADD/CREATE A NEW PHONE",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "example": "iPhone 15"
+                },
+                "brand": {
+                  "example": "Apple"
+                },
+                "screenSize": {
+                  "example": "6.1-inch (diagonal)"
+                },
+                "capacity": {
+                  "example": "128GB"
+                },
+                "chip": {
+                  "example": "A16 Bionic Chip"
+                },
+                "backCamera": {
+                  "example": "48 MP"
+                },
+                "frontCamera": {
+                  "example": "12 MP"
+                },
+                "price": {
+                  "example": "1129"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/phones/{id}": {
+      "get": {
+        "tags": ["PHONES"],
+        "description": "GET A SINGLE PHONE DETAILS BY ID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": ["PHONES"],
+        "description": "UPDATE PHONE DETAILS BY ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "screenSize": {
+                  "example": "any"
+                },
+                "capacity": {
+                  "example": "64 GB"
+                },
+                "chip": {
+                  "example": "any"
+                },
+                "backCamera": {
+                  "example": "24 MP"
+                },
+                "frontCamera": {
+                  "example": "6 MP"
+                },
+                "price": {
+                  "example": "1200"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["PHONES"],
+        "description": "DELETE A SMARTPHONE BY ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
