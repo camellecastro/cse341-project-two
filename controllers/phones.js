@@ -28,7 +28,7 @@ const getSingle = async (req, res) => {
     .getDb("Cluster1")
     .db("project2")
     .collection("smartphones")
-    .find({ _id: contactId });
+    .find({ _id: phoneId });
   result.toArray().then((phones) => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(phones[0]);
