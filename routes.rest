@@ -1,8 +1,14 @@
-### GET REQUEST FOR ALL CONTACTS
-GET https://cse341-project-one-contacts.onrender.com/contacts
+### GET REQUEST FOR ALL LAPTOPS ON RENDER
+GET https://cse341-project-two.onrender.com/localhost:8000/laptops
 
-### GET REQUEST FOR SWAGGER
-GET https://cse341-project-one-contacts.onrender.com/api-docs/
+### GET REQUEST FOR ALL LAPTOPS ON RENDER
+GET https://cse341-project-two.onrender.com/localhost:8000/laptops
+
+### SWAGGER
+GET https://cse341-project-two.onrender.com/api-docs/
+
+### SWAGGER LOCALHOST
+GET http://localhost:8000/api-docs/
 
 ### GET REQUEST FOR HELLO WORLD
 GET http://localhost:8000/

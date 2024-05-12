@@ -5,8 +5,8 @@ const doc = {
     title: "Laptop and Smartphone API",
     description: "Laptops and Smartphones API",
   },
-  host: "localhost:8000",
-  schemes: ["http"],
+  host: "cse341-project-two.onrender.com",
+  schemes: ["https"],
 };
 
 const outputFile = "./swagger.json";
