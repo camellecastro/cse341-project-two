@@ -22,44 +22,45 @@ GET http://localhost:8000/laptops
 
 ### GET REQUEST FROM LOCAL HOST THAT SHOWS ONE LAPTOP BY ID
 // GET ONE LAPTOP
-GET http://localhost:8000/contacts/66403dd1a19a99e1e3e1c83d
+GET http://localhost:8000/laptops/6640583132723
 
 ### POST REQUEST FROM LOCAL HOST TO CREATE A NEW LAPTOP
 // POST NEW LAPTOP
-POST http://localhost:8000/contacts HTTP/1.1
+POST http://localhost:8000/laptops HTTP/1.1
 Content-Type: application/json
 
 {
-    "modelName": "Macbook Air M3",
-    "brand": "Apple",
-    "processor": "16-Core Neural Engine",
-    "screenSize": "13.6",
+    "modelName": "Grapebook",
+    "brand": "Fruits",
+    "processor": "16-Core",
+    "screenSize": "13",
     "batteryLife": "18 hours",
     "installedRAM": "16 GB",
-    "driveCapacity": "512 GB",
+    "driveCapacity": "256 GB",
     "driveType": "SSD",
-    "price": 1949
+    "price": 1455
 }
 
 ### PUT REQUEST FROM LOCAL HOST TO UPDATE LAPTOP BY ID
 // UPDATE LAPTOP BY ID
-PUT http://localhost:8000/contacts/66403e94a19a99e1e3e1c840 HTTP/1.1
+PUT http://localhost:8000/laptops/66406b0a7c64fe1c43d2053dh HTTP/1.1
 Content-Type: application/json
 
 {
-    "modelName": "Macbook Air M3",
-    "brand": "Apple",
-    "processor": "16-Core Neural Engine",
-    "screenSize": "13.6",
-    "installedRAM": "16 GB",
-    "driveCapacity": "512 GB",
+    "modelName": "Unknown",
+    "brand": "Unknown",
+    "processor": "AMD Rayzen 5",
+    "screenSize": "13 inches",
+    "batteryLife": "20 hours",
+    "installedRAM": "8 GB",
+    "driveCapacity": "256 GB",
     "driveType": "SSD",
-    "price": 1949
+    "price": 1300
 }
 
 ### DELETE REQUEST FROM LOCAL HOST TO DELETE ONE LAPTOP BY ID
 // DELETE LAPTOP BY ID
-DELETE http://localhost:8000/contacts/6636f8a5c407ef093cb2fa99 HTTP/1.1
+DELETE http://localhost:8000/laptops/66406b0a7c64fe1c43djhgy HTTP/1.1
 
 
 # #############################
@@ -71,11 +72,11 @@ GET http://localhost:8000/phones
 
 ### GET REQUEST FROM LOCAL HOST THAT SHOWS ONE SMARTPHONE BY ID
 // GET ONE SMARTPHONE
-GET http://localhost:3000/contacts/664040b4a19a99e1e3e1c843
+GET http://localhost:3000/phones/664040b4a19a99e1e3e1c843
 
 ### POST REQUEST FROM LOCAL HOST TO CREATE A NEW SMARTPHONE
 // POST NEW SMARTPHONE
-POST http://localhost:3000/contacts HTTP/1.1
+POST http://localhost:3000/phones HTTP/1.1
 Content-Type: application/json
 
 {
@@ -91,7 +92,7 @@ Content-Type: application/json
 
 ### PUT REQUEST FROM LOCAL HOST TO UPDATE SMARTPHONE BY ID
 // UPDATE SMARTPHONE BY ID
-PUT http://localhost:3000/contacts/66403e94a19a99e1e3e1c840 HTTP/1.1
+PUT http://localhost:3000/phones/66403e94a19a99e1e3e1c840 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -107,4 +108,4 @@ Content-Type: application/json
 
 ### DELETE REQUEST FROM LOCAL HOST TO DELETE ONE SMARTPHONE BY ID
 // DELETE SMARTPHONE BY ID
-DELETE http://localhost:3000/contacts/6636f8a5c407ef093cb2fa99 HTTP/1.1
+DELETE http://localhost:3000/phones/6636f8a5c407ef093cb2fa99 HTTP/1.1
