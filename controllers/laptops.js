@@ -3,10 +3,9 @@ const ObjectId = require("mongodb").ObjectId;
 
 // Get All Laptops
 const getAll = async (req, res) => {
-    /*
-    #swagger.tags["Laptops"];
-    */
-
+  /*
+  #swagger.tags["Laptops"];
+  */
   const result = await mongodb
     .getDb("Cluster1")
     .db("project2")
@@ -17,48 +16,8 @@ const getAll = async (req, res) => {
     res.status(200).json(laptops);
   });
 };
-// const getAll = async (req, res) => {
-//   /*
-//   #swagger.tags["Laptops"];
-//   */
-//   const result = await mongodb
-//     .getDb("Cluster1")
-//     .db("project2")
-//     .collection("laptops")
-//     .find();
-//   try {
-//     result.toArray().then((laptops) => {
-//       res.setHeader("Content-Type", "application/json");
-//       res.status(200).json(laptops[0]);
-//     });
-//   } catch (err) {
-//     res.status(400).json({ message: err });
-//   }
-//   if (result < 0) {
-//     res.status(500)
-//     .json(response.error || "An error occured. Please try again.")
-//   }
-// };
 
 // Get Single Laptop by ID from database
-// const getSingle = async (req, res) => {
-//   if (!ObjectId.isValid(req.params.id)) {
-//     res.status(400).json("Must use a valid laptop id to find the laptop.");
-//   }
-//   /*
-//     #swagger.tags["Laptops"];
-//     */
-//   const laptopId = new ObjectId(req.params.id);
-//   const result = await mongodb
-//     .getDb("Cluster1")
-//     .db("project2")
-//     .collection("laptops")
-//     .find({ _id: laptopId });
-//   result.toArray().then((laptops) => {
-//     res.setHeader("Content-Type", "application/json");
-//     res.status(200).json(laptops[0]);
-//   });
-// };
 const getSingle = async (req, res) => {
   if (ObjectId.isValid(req.params.id)) {
     /*
@@ -86,8 +45,8 @@ const getSingle = async (req, res) => {
 // create/post new laptop
 const addLaptop = async (req, res) => {
   /*
-    #swagger.tags["Laptops"];
-    */
+  #swagger.tags["Laptops"];
+  */
   const laptop = {
     modelName: req.body.modelName,
     brand: req.body.brand,
@@ -113,7 +72,7 @@ const addLaptop = async (req, res) => {
   }
 };
 
-// update existing laptop
+// update existing laptop by ID
 const updateLaptop = async (req, res) => {
   if (ObjectId.isValid(req.params.id)) {
     /*
@@ -156,30 +115,34 @@ const updateLaptop = async (req, res) => {
   }   
 };
 
+// delete phone by ID
 const deleteLaptop = async (req, res) => {
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json("Must use a valid laptop id to delete a laptop.");
-  }
-  /*
+  if (ObjectId.isValid(req.params.id)) {
+    /*
     #swagger.tags["Laptops"];
     */
-  const laptopId = new ObjectId(req.params.id);
-  const response = await mongodb
-    .getDb("Cluster1")
-    .db("project2")
-    .collection("laptops")
-    .deleteOne({ _id: laptopId });
+    const laptopId = new ObjectId(req.params.id);
+    const response = await mongodb
+      .getDb("Cluster1")
+      .db("project2")
+      .collection("laptops")
+      .deleteOne({ _id: laptopId });
 
-  if (response.deletedCount > 0) {
-    res.status(204).json(response);
+    if (response.deletedCount > 0) {
+      res.status(204).json(response);
+    } else {
+      res
+        .status(500)
+        .json(
+          response.error ||
+          "Some error occurred while removing the laptop details."
+        );
+    }
   } else {
     res
-      .status(500)
-      .json(
-        response.error ||
-          "Some error occurred while removing the laptop details."
-      );
-  }
+      .status(400)
+      .json("Must use a valid laptop id to delete a laptop.");
+  }  
 };
 
 module.exports = {
